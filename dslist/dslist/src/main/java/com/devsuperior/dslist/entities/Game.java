@@ -3,6 +3,7 @@ package com.devsuperior.dslist.entities;
 import jakarta.persistence.*;
 
 
+import java.lang.module.Configuration;
 import java.util.Objects;
 
 @Entity
@@ -17,10 +18,13 @@ public class Game {
     @Column(name = "game_year")
     private Integer year;
     private String genre;
-    private String plataform;
+    private String platforms;
     private double score;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     public Game(){}
@@ -57,12 +61,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlataform () {
-        return plataform;
+    public String getPlatforms () {
+        return platforms;
     }
 
-    public void setPlataform (String plataform) {
-        this.plataform = plataform;
+    public void setPlatforms (String plataform) {
+        this.platforms = plataform;
     }
 
     public double getScore () {
